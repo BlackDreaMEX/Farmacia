@@ -42,6 +42,7 @@ namespace Ecommerce.Models
         public DbSet<Compras> Compras{ get; set; }
         public DbSet<Provedores> Provedores{ get; set; }
         public DbSet<Empleados> Empleados { get; set; }
+        public DbSet<Facturas> Facturas { get; set; }
 
 
         /*protected override void OnModelCreating(DbModelBuilder modelBuilder)

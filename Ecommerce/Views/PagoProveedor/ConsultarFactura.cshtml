@@ -1,0 +1,93 @@
+﻿    @{
+        ViewBag.Title = "ConsultarFacturas";
+        Layout = "~/Views/Shared/_Layout_PagoProveedor.cshtml";
+    }
+    <center>
+        <h3>
+            <strong>PAGO A PROVEEDORES</strong>
+        </h3>
+    </center>
+    <center>
+        <h3>
+            <p style="color:dodgerblue">
+                <strong>Consultar Facturas</strong>
+            </p>
+        </h3>
+    </center>
+    <br />
+    <div class="container">
+        <div class="col-md-1">
+            <br /><br /><br />
+            <center>
+                <img src="~/Estilos/images/documento.png" style="width:100%" />
+            </center>
+        </div>
+        <div class="col-md-11">
+            <table id="example" class="table table-striped table-bordered">
+                <thead>
+                    <tr class="warning">
+                        <th><center>No. Factura</center></th>
+                        <th><center>Fecha de Pago</center></th>
+                        <th><center>Proveedor</center></th>
+                        <th><center>Total de Factura</center></th>
+                        <th><center>Estatus de Pago</center></th>
+                        <th><center>Detalles de Facturas</center></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4</td>
+                        <td>25/06/2020</td>
+                        <td>Canamedix</td>
+                        <td>$8530</td>
+                        <td>NO PAGADO</td>
+                        <td>
+                            <center>
+                                <input type="button" class="btn btn-danger btn-sm"
+                                       value="VER DETALLES" style="font-weight: bold"
+                                       onclick="location.href='@Url.Action("VerDetallesId4", "PagoProveedor")'" />
+                            </center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>30/06/2020</td>
+                        <td>Bayer de Mexico</td>
+                        <td>$1400</td>
+                        <td>NO PAGADO</td>
+                        <td>
+                            <center>
+                                <input type="button" class="btn btn-danger btn-sm"
+                                       value="VER DETALLES" style="font-weight: bold"
+                                       onclick="location.href='@Url.Action("VerDetallesId5", "PagoProveedor")'" />
+                            </center>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+
+    <script>
+    $(document).ready(function () {
+        var table = $('#example').DataTable({
+            "pageLength": 10,
+            "language": {
+                "paginate": {
+                    "previous": '‹',
+                    "next": '›',
+                },
+                "lengthMenu": "Mostrar _MENU_ registros por página",
+                "info": "Mostando _PAGE_ de _PAGES_ páginas",
+                "search": "Buscar:",
+                "infoFiltered": "(Filtrado de _MAX_ registros)",
+                "zeroRecords": "No se encontraron datos",
+                "emptyTable": "No hay datos disponibles",
+                "infoEmpty": "No existen registros sobre la consulta",
+            }
+        });
+    });
+    </script>

@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "VerDetalles";
+    Layout = "~/Views/Shared/_Layout_PagoProveedor.cshtml";
+}
+
+<center>
+    <h3>
+        <strong>PAGO A PROVEEDORES</strong>
+    </h3>
+</center>
+<br />
+
+<div class="container">
+    <div class="col-md-1">
+        <center>
+            <input type="button" class="btn btn-warning"
+                   value="REGRESAR" style="font-weight: bold"
+                   onclick="location.href='@Url.Action("ConsultarFacturas", "PagoProveedor")'" />
+            <br /><br /><br />
+            <img src="~/Estilos/images/documento.png" style="width:150%" />
+        </center>
+    </div>
+    <div class="col-md-offset-1 col-md-9">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <center>
+                    <strong>DETALLE DE FACTURA</strong>
+                </center>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-offset-1">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <strong>Número de Factura:</strong>
+                                </div>
+                                <div class="col-md-6">
+                                    5
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <strong>Fecha de Pago:</strong>
+                                </div>
+                                <div class="col-md-6">
+                                    30/06/2020
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <strong>Total de Factura:</strong>
+                                </div>
+                                <div class="col-md-6">
+                                    $1400
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <strong>Proveedor:</strong>
+                                </div>
+                                <div class="col-md-6">
+                                    Bayer de Mexico
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <strong>Estatus de Pago:</strong>
+                                </div>
+                                <div class="col-md-6">
+                                    NO PAGADO
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-3">
+                            <strong>Detalles:</strong>
+                        </div>
+                        <div class="col-md-9">
+                            La mercancía se entrego de manera completa
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <center>
+                                <input type="button" class="btn btn-success"
+                                       value="GENERAR ORDEN DE PAGO" style="font-weight: bold"
+                                       onclick="location.href='@Url.Action("GenerarOrdenPagoId5", "PagoProveedor")'" />
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

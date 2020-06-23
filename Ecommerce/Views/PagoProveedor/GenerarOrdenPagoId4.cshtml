@@ -1,0 +1,70 @@
+﻿@using Ecommerce.Models
+@model PagoProveedor
+@{
+    ViewBag.Title = "GenerarOrdenPago";
+    Layout = "~/Views/Shared/_Layout_PagoProveedor.cshtml";
+}
+
+<center>
+    <h3>
+        <strong>PAGO A PROVEEDORES</strong>
+    </h3>
+</center>
+<br />
+<div class="container">
+    <div class="col-md-8">
+        *El total a pagar debe excluir la cantidad de las devoluciones realizadas al proveedor
+        <br />
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <center>
+                    <strong>GENERAR ORDEN DE PAGO</strong>
+                </center>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-offset-1">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="caja1">Número de Factura</label>
+                                <input type="text" class="form-control" id="caja1" value="4" disabled="disabled">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="caja2">Proveedor</label>
+                                <input type="text" class="form-control" id="caja2" value="Canamedix" disabled="disabled" >
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="caja3">Total a Pagar</label>
+                                <input type="number" class="form-control" id="caja3" placeholder="Favor de ingresar la cantidad a pagar">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="caja4">Fecha de Pago</label>
+                                <input type="text" class="form-control" id="caja4" value="25/06/2020" disabled="disabled">
+                            </div>
+                        </div>
+                        <br />
+                        <div class="col-md-12">
+                            <center>
+                                <input type="button" class="btn btn-success"
+                                       value="GENERAR ORDEN" style="font-weight: bold"
+                                       onclick="location.href='@Url.Action("ConsultarFacturas", "PagoProveedor")'" />
+                                <input type="button" class="btn btn-danger"
+                                       value="CANCELAR ORDEN" style="font-weight: bold"
+                                       onclick="location.href='@Url.Action("VerDetallesId4", "PagoProveedor")'" />
+                            </center>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <br /><br />
+        <center>
+            <img src="~/Estilos/images/orden.png" style="width:200%" />
+        </center>
+    </div>
+</div>
